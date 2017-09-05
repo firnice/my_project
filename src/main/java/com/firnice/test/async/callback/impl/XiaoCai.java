@@ -26,6 +26,7 @@ public class XiaoCai implements ReceiveFood {
 
     @Override
     public void receiveFood(Food food) {
+
         System.out.println(food.getFoodName()+" is receive !");
     }
 }
