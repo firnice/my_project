@@ -19,6 +19,7 @@ public class SingleDoubleKey {
         if (singleDoubleKey == null) {
             synchronized(SingleDoubleKey.class) {
                 if (singleDoubleKey == null) {
+                    //new 并不一定赋值，可能给默认值
                     singleDoubleKey = new SingleDoubleKey();
                 }
             }
