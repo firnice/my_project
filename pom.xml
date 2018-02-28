@@ -17,6 +17,7 @@
     <modules>
         <module>mp-test-one</module>
         <module>mp-test-two</module>
+        <module>mp-design-pattern</module>
     </modules>
 
     <dependencies>
