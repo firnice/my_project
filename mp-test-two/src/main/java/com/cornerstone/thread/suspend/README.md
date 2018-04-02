@@ -1,0 +1,3 @@
+suspend/resume
+已经废弃的方法，可以用wait/notify来实现
+因为这俩方法容易造成线程状态的混乱
