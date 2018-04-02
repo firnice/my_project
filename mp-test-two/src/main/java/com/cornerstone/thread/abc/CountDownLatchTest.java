@@ -1,4 +1,4 @@
-package com.cornerstone.thread;
+package com.cornerstone.thread.abc;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;

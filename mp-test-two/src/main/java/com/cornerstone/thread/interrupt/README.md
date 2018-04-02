@@ -1,0 +1,3 @@
+相比stop有更优雅的解决方式
+interrupt
+这种方式能触发sleep，wait方法抛出InterruptedException,这样不用让程序空等。需要注意的是抛出异常后中断标记会被清零
