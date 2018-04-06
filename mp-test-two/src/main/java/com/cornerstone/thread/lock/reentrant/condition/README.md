@@ -1,0 +1,1 @@
+condition 与object的wait和notify作用相同，前者与reentrantlock结合使用，后者与sychronized结合使用。
