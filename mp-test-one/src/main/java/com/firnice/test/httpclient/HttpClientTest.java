@@ -30,7 +30,7 @@ public class HttpClientTest {
 
     public static void main(String[] args) {
         try {
-            for (int i =0 ;i<400;i++) {
+            for (int i =0 ;i<2;i++) {
                 test1();
                 System.out.println(i);
             }
