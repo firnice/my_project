@@ -11,12 +11,9 @@ public class ListTest {
         list.add(2);
         list.add(3);
         list.add(4);
-        for (int i =0 ;i<list.size();i++){
-            System.out.println(list.get(i));
 
-            if(i==1){
-                list.remove(i);
-            }
-        }
+
+        list.add(1,10);
+        System.out.println(list);
     }
 }
