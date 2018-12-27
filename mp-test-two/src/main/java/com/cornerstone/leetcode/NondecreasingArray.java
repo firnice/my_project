@@ -1,5 +1,6 @@
 package com.cornerstone.leetcode;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +32,12 @@ public class NondecreasingArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(checkPossibility(new int[]{3, 4, 2, 3}));
+//        System.out.println(checkPossibility(new int[]{3, 4, 2, 3}));
+//
+//        Integer[] ints = {3, 4, 2, 3};
+//        List<Integer> ints1 = Arrays.asList(ints);
+//        System.out.println(ints);
+        System.out.println("154563688646017870".length());
+        Long id = Long.parseLong("154563688646017870");
     }
 }
