@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <!-- <progress id="progress" value="0" max="60" min="0" style="width: 300px"></progress>
+  <div id="lottie"></div> -->
+  <img id="imgbox" src="" alt="">
+
+<!-- <video id="awesome" width="885" height="447" controls autoplay loop></video>
+  <br> -->
+Status: <span id="status">Idle</span>
+<!--<a style="display:none" id="download" download="clock.webm">Download WebM</a>-->
+<script src="std.js"></script>
+  <!-- <script src="./js/lottie.js"></script>
+  <script src="./js/whammy.js"></script>
+  <script>
+    var canva = document.createElement('canvas')
+    canva.width = 544
+    canva.height = 960
+    const animation = lottie.loadAnimation({
+       container: document.getElementById('lottie'), // 要包含该动画的dom元素
+       renderer: 'canvas',// 渲染方式，svg、canvas、html（轻量版仅svg渲染）
+       //loop: false,// 是否循环播放
+       autoplay: false,// 是否自动播放
+       path: './std.json',//如果没有图片做动效,全是设计师用画的矢量图形 // 动画json文件路径
+       rendererSettings:{context:canva.getContext('2d'),clearCanvas:true}
+       //animationData: './std.json'   //如果有图片做动效,二者填其一即可
+    })
+    window.onload = function (){
+      //var canva = document.querySelector('#lottie canvas')
+      const frameCount = animation.getDuration(true);
+      console.log(frameCount)
+      
+      var frame = 1
+      function renderFrame(frame){
+        animation.goToAndStop(frame, true)
+        setTimeout(() => {
+          if (frame <= frameCount){
+            var imgData = canva.toDataURL("image/png");
+            console.log(imgData)
+            renderFrame(frame+=1)
+          } else {
+            console.log(frame)
+          }
+        }, 0)
+      }
+      renderFrame(frame)
+    }
+    
+    
+    // var n = 0
+    // var time
+    
+    // window.onload = function(){
+    //   //   var canva = document.querySelector('#lottie canvas')
+    //   //   console.log(canva)
+    //   //   function resume(){
+        
+    //   //   var imgData = canva.toDataURL("image/png");
+    //   //   console.log(n+=1)
+    //   //   document.getElementById('imgbox').src = imgData
+    //   //     //window.requestAnimationFrame(resume)
+        
+    //   // }
+    //   // time = setInterval(resume,100)
+    //   // resume()
+
+    //   var last_time = +new Date
+    //   var video = new Whammy.Video(30)
+    //   var progress = document.getElementById('progress')
+      
+    //   animation.addEventListener('enterFrame', () => {
+    //     progress.value++;
+    //     var canva = document.querySelector('#lottie canvas')
+    //     var imgData = canva.toDataURL('image/webp', 0.8);
+    //     video.add(imgData)
+    //     document.getElementById('status').innerHTML = "Drawing Frame"
+    //     // if(progress.value / progress.max < 1){
+    //     //   //requestAnimationFrame(nextFrame)
+    //     //   document.getElementById('status').innerHTML = "Drawing Frame"
+    //     // } else {
+    //     //   document.getElementById('status').innerHTML = 'compiling Video'
+    //     //   //requestAnimationFrame(finalizeVideo)
+    //     //   finalizeVideo()
+    //     // }
+    //     // var imgData = canva.toDataURL("image/png");
+    //     // console.log(imgData)
+    //     // document.getElementById('imgbox').src = imgData
+    //     // clearInterval(time)
+    //     // window.cancelAnimationFrame(time)
+    //   })
+    //   animation.addEventListener('complete', () => {
+    //        document.getElementById('status').innerHTML = 'compiling Video'
+    //       //requestAnimationFrame(finalizeVideo)
+    //       finalizeVideo()
+    //   })
+    //   function ani(){
+    //   lottie.loadAnimation({
+    //     container: document.getElementById('lottie'), // 要包含该动画的dom元素
+    //     renderer: 'canvas',// 渲染方式，svg、canvas、html（轻量版仅svg渲染）
+    //     loop: false,// 是否循环播放
+    //     autoplay: true,// 是否自动播放
+    //     path: './std.json',//如果没有图片做动效,全是设计师用画的矢量图形 // 动画json文件路径
+    //     //animationData: 'images/image_0.png'   //如果有图片做动效,二者填其一即可
+    //   })
+    // }
+    // function finalizeVideo(){
+    //   var start_time = +new Date;
+    //   var output = video.compile()
+    //   var end_time = +new Date;
+    //   var url = webkitURL.createObjectURL(output)
+
+    //   document.getElementById('awesome').src = url
+    //   document.getElementById('download').style.display = '';
+	  //   document.getElementById('download').href = url;
+	  //   document.getElementById('status').innerHTML = "Compiled Video in " + (end_time - start_time) + "ms, file size: " + Math.ceil(output.size / 1024) + "KB";
+    // }
+
+      
+
+    //   // function nextFrame(){
+    //   //   progress.valur++;
+    //   //   var context = ani()
+    //   //   var canva = document.querySelector('#lottie canvas').getContext('2d')
+    //   //   video.add(canva)
+    //   //   if(progress.value / progress.max < 1){
+    //   //     requestAnimationFrame(nextFrame)
+    //   //     document.getElementById('status').innerHTML = "Drawing Frame"
+    //   //   } else {
+    //   //     document.getElementById('status').innerHTML = 'compiling Video'
+    //   //     requestAnimationFrame(finalizeVideo)
+    //   //   }
+    //   // }
+    //   // nextFrame()
+    // }
+
+  </script> -->
+</body>
+</html>

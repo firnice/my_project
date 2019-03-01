@@ -17,7 +17,9 @@
     <modules>
         <module>mp-test-one</module>
         <module>mp-test-two</module>
+        <module>mp-test-lottie</module>
         <module>mp-design-pattern</module>
+        <module>mp-test-lottie</module>
     </modules>
 
     <dependencies>
