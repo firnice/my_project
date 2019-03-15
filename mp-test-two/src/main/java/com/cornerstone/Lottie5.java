@@ -11,18 +11,22 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 
-public class Lottie3 {
+public class Lottie5 {
+    
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, MalformedURLException {
 
 
         DesiredCapabilities caps = DesiredCapabilities.chrome();
@@ -40,7 +44,10 @@ public class Lottie3 {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); //无浏览器模式
         options.merge(caps);
-        WebDriver driver = new ChromeDriver(options);
+//        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),caps);
+
+
         // This will block for the page load and any
         // associated AJAX requests
 //        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -89,6 +96,7 @@ public class Lottie3 {
         driver.quit();
 
     }
+
 
 
 }

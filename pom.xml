@@ -20,6 +20,7 @@
         <module>mp-test-lottie</module>
         <module>mp-design-pattern</module>
         <module>mp-test-lottie</module>
+        <module>mp-test-five</module>
     </modules>
 
     <dependencies>
@@ -29,10 +30,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
 
     </dependencies>
     <repositories>
@@ -55,7 +56,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>19.0</version>
+                <version>22.0</version>
             </dependency>
             <dependency>
                 <groupId>org.json</groupId>

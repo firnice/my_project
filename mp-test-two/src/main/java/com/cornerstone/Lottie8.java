@@ -3,7 +3,6 @@ package com.cornerstone;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
@@ -11,19 +10,24 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 
-public class Lottie3 {
+public class Lottie8 {
+    
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, MalformedURLException {
 
+        String url = "http://localhost:8033/wx/ft/index.html?w=720&h=1280&json=https://wechat-mini-program-beta.oss-cn-beijing.aliyuncs.com/model/1/std.json&path=https://wechat-mini-program-beta.oss-cn-beijing.aliyuncs.com/wx/ft/u/30/";
 
         DesiredCapabilities caps = DesiredCapabilities.chrome();
         LoggingPreferences logPrefs = new LoggingPreferences();
@@ -40,12 +44,15 @@ public class Lottie3 {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); //无浏览器模式
         options.merge(caps);
-        WebDriver driver = new ChromeDriver(options);
+//        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://172.17.210.100:8039/wd/hub"),caps);
+
+
         // This will block for the page load and any
         // associated AJAX requests
 //        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 //        driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
-        driver.get("http://localhost:9090/index.html");
+        driver.get(url);
 
 
         (new WebDriverWait(driver, 1000)).until(new ExpectedCondition<Boolean>() {
@@ -63,8 +70,24 @@ public class Lottie3 {
             LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
             for (LogEntry entry : logEntries) {
 //                System.out.println("chrome.console====" + " " + entry.getLevel() + " " + entry.getMessage());
-                out.write(entry.getMessage());
-                out.newLine();  //注意\n不一定在各种计算机上都能产生换行的效果
+
+
+                if (entry.getMessage().indexOf("data:image/jpeg;base64") > 0) {
+                    String substring = entry.getMessage().substring(entry.getMessage().indexOf("\"data:image/jpeg;base64"));
+                    if (substring.endsWith("\"") && substring.startsWith("\"")) {
+                        substring = substring.substring(1, substring.length() - 1);
+                    } else if (substring.startsWith("\"")) {
+                        substring = substring.substring(1, substring.length());
+                    } else if (substring.endsWith("\"")) {
+                        substring = substring.substring(0, substring.length() - 1);
+                    }
+                    String[] split = substring.split("###");
+                    for (String s : split) {
+                        out.write(s);
+                        out.newLine();  //注意\n不一定在各种计算机上都能产生换行的效果
+                    }
+
+                }
             }
             out.close();
         } catch (IOException e) {
@@ -89,6 +112,7 @@ public class Lottie3 {
         driver.quit();
 
     }
+
 
 
 }
