@@ -17,10 +17,14 @@
     <modules>
         <module>mp-test-one</module>
         <module>mp-test-two</module>
-        <module>mp-test-lottie</module>
+        <!--<module>mp-test-lottie</module>-->
         <module>mp-design-pattern</module>
-        <module>mp-test-lottie</module>
+        <!--<module>mp-test-lottie</module>-->
         <module>mp-test-five</module>
+        <module>mp-test-chromedriver</module>
+        <module>mp-test-ffmpeg</module>
+        <module>mp-test-ffmpeg2</module>
+        <module>mp-test-ffmpeg3</module>
     </modules>
 
     <dependencies>
