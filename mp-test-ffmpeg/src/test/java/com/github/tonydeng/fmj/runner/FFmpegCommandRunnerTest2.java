@@ -147,4 +147,26 @@ public class FFmpegCommandRunnerTest2 extends BaseTest {
 //        commands.addAll(commands2);
         FFmpegCommandRunner.runProcess(commands);
     }
+
+
+    @Test
+    public void test() {
+        List<String> commands = Lists.newArrayList(
+"ffmpeg",
+                "-r", "1",
+                "-i", "https://b612kaji-sns-beta.oss-cn-beijing.aliyuncs.com/activity/newyear/test/%d.jpg",
+                "-ss", "00:00:00",
+                "-t", "6",
+                "-r", "1",
+                "-i", "https://b612kaji-sns-beta.oss-cn-beijing.aliyuncs.com/activity/cartoon/spring.mp3",
+                "-acodec", "aac",
+                "-vcodec", "libx264",
+                "-pix_fmt", "yuv420p",
+                "-s", "750x918",
+                "-strict",
+                "-2",
+                "1234.mp4"
+        );
+        FFmpegCommandRunner.runProcess(commands);
+    }
 }

@@ -21,6 +21,7 @@
         <module>mp-design-pattern</module>
         <!--<module>mp-test-lottie</module>-->
         <module>mp-test-five</module>
+        <module>mp-test-six</module>
         <module>mp-test-chromedriver</module>
         <module>mp-test-ffmpeg</module>
         <module>mp-test-ffmpeg2</module>
@@ -145,7 +146,11 @@
                 <artifactId>mahout-core</artifactId>
                 <version>0.9</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.bytedeco</groupId>
+                <artifactId>javacv-platform</artifactId>
+                <version>1.5.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
