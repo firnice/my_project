@@ -72,6 +72,10 @@
             <artifactId>javacv-platform</artifactId>
             <version>1.4.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.11</version>
+        </dependency>
     </dependencies>
 </project>
